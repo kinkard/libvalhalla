@@ -41,7 +41,13 @@ mod ffi {
         /// Identifier within the tile, unique within the tile and level
         fn id(self: &GraphId) -> u32;
 
+        #[namespace = "valhalla::baldr"]
+        type GraphTileHeader;
+        fn directededgecount(self: &GraphTileHeader) -> u32;
+        fn nodecount(self: &GraphTileHeader) -> u32;
+
         type GraphTile;
+        unsafe fn header(self: &GraphTile) -> *const GraphTileHeader;
 
         type GraphLevel;
 
