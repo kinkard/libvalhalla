@@ -41,6 +41,9 @@ exclude = [
     "valhalla/third_party/unordered_dense/data",
 ]
 
+[profile.release]
+debug = true
+
 [dependencies]
 anyhow = "1.0"
 bitflags = "2.9"
@@ -58,3 +61,8 @@ prost-build = "0.14"
 miniserde = "0.1"
 pretty_assertions = "1"
 tempfile = "3.20"
+criterion = { version = "0.6", default-features = false }
+
+[[bench]]
+name = "actor_benchmarks"
+harness = false

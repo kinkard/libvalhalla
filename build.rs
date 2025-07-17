@@ -6,7 +6,7 @@ fn main() {
     let build_type = if matches!(std::env::var("PROFILE"), Ok(profile) if profile == "debug") {
         "Debug"
     } else {
-        "Release"
+        "RelWithDebInfo"
     };
 
     // Copy valhalla source to OUT_DIR to avoid modifying the original source that is happening in
